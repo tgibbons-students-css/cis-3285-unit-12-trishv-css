@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace SubtypeCovariance
 {
-    public class UserRepository : EntityRepository
+    //changed class to use an interface with a generic type.  ----prv 11/27/17
+    public class UserRepository : IEntityRepository<User>
     {
         //public override Entity GetByID(Guid id)
-        public override User GetByID(Guid id)
+        
+        //removed override from method signature ----prv 11/27/17
+        public User GetByID(Guid id)
         {
             return new User(id);
         }

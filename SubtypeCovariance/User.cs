@@ -8,6 +8,12 @@ namespace SubtypeCovariance
 {
     public class User : Entity
     {
+        //added constructor ----prv 11/27/17
+        public User(Guid newID) : base(newID) 
+        {
+            EmailAddress = "";
+        }
+
         public string EmailAddress { get; set; }
 
         public DateTime DateOfBirth { get; set; }
